@@ -1,26 +1,66 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ProfessionalData/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ProfessionalData from './components/professional-data.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    ProfessionalData
+}
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#App {
+  font-family: 'Open Sans', sans-serif; 
 }
+
+body{
+  background-color: #ffe766;
+}
+
+.main-title {
+  font-family:  'Comfortaa', cursive;
+  color: #483696;
+}
+
+.btn-primary {
+  background-color: #483696;
+  font-family: 'Comfortaa', cursive;
+  border-color: #483696;
+}
+
+.btn-primary:hover {
+  background-color: white;
+  color: #483696;
+  border-color: #483696;
+}
+
+.btn-primary:focus {
+  
+  background-color: white;
+  color: #483696;
+  border-color: #483696;
+}
+
+#progress-label {
+  font-family: 'Comfortaa', cursive;
+  color: #483696;
+}
+
+.progress-bar {
+  background-color: #483696;
+}
+
+.container {
+  background-color: #ffffff;
+}
+
+.form-control, .form-select {
+  border-color: #483696;
+}
+
 </style>
