@@ -1,6 +1,12 @@
 <template> 
   <body><br>  
       <div class="d-flex flex-column min-vh-100 justify-content-lg-center align-items-lg-center justify-content-md-end justify-content-sm-end justify-content-end"> 
+        <div class="d-flex flex-column align-items-lg-start">
+          <router-link to="/attendance">
+            <button type="button" class="back-button mb-5">
+              <i class="bi bi-chevron-left" style="font-size: 30px; color: #483698;"></i>
+            </button>
+          </router-link>
           <div class="shadow p-4 bg-white rounded-5">
           <div class="container"><br>
             <div class="main-title">
@@ -54,7 +60,9 @@
                 </div>
                 <div class="row justify-content-center">
                   <div class="offset-7">
-                    <label class="form-label" id="edit-button">Editar cadastro</label>    
+                    <router-link to="/">
+                      <button class="back-button" id="edit-button">Editar cadastro</button>    
+                    </router-link>
                   </div>
                 </div>
                 </div>
@@ -69,6 +77,7 @@
           </div>
         </div>
       </div>
+    </div>
   </body>
 </template>
 

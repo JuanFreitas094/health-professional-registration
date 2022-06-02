@@ -67,9 +67,11 @@
           <br/>
 
           <div class="row">
-            <div class="d-grid gap-2 col-12">
-              <button type="button" class="btn btn-primary">PRÓXIMO</button>
-            </div>
+            <router-link to="/attendance">
+              <div class="d-grid gap-2 col-12">
+                <button type="button" class="btn btn-primary">PRÓXIMO</button>
+              </div>            
+            </router-link>
           </div>
 
           </div>
