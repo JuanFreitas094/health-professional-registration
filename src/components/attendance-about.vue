@@ -71,33 +71,35 @@
                       <div class="row">
                         <div class="col-lg-1 col-sm-1 col-2">
                           <div class="form-check">
-                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                            <input class="form-check-input position-static" type="checkbox" v-model="checkBoxChecked" id="blankCheckbox" value="option1" aria-label="...">
                           </div>
                         </div>
 
                         <div class="col-lg-11 col-sm-11 col-10">
-                          <label class="form-label ps-4"><strong>Cartão de crédito</strong></label>
+                          <label class="form-label ps-4 pb-1"><strong>Cartão de crédito</strong></label>
                           <br>
-                          <label class="form-label ps-4">Parcelamento em</label>
-                          <br/>
+                          <div v-if="checkBoxChecked">
+                            <label class="form-label ps-4">Parcelamento em</label>
+                            <br/>
 
-                          <div class="form-check mb-2 ps-5">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                              1x, sem juros
-                            </label>
-                          </div>
-                          <div class="form-check mb-2 ps-5">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                            <label class="form-check-label" for="flexRadioDefault2">
-                              2x, sem juros
-                            </label>
-                          </div>
                             <div class="form-check mb-2 ps-5">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
-                            <label class="form-check-label" for="flexRadioDefault3">
-                              3x, sem juros
-                            </label>
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                              <label class="form-check-label" for="flexRadioDefault1">
+                                1x, sem juros
+                              </label>
+                            </div>
+                            <div class="form-check mb-2 ps-5">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                              <label class="form-check-label" for="flexRadioDefault2">
+                                2x, sem juros
+                              </label>
+                            </div>
+                              <div class="form-check mb-2 ps-5">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+                              <label class="form-check-label" for="flexRadioDefault3">
+                                3x, sem juros
+                              </label>
+                            </div>
                           </div>
                         </div>
                     </div>
@@ -141,6 +143,18 @@
     </div>
   </body>
 </template>
+
+
+<script>
+  export default {
+    data() {
+      return {
+        checkBoxChecked: false
+      }
+    }
+  }
+</script>
+
 
 <style>
 #pix, #cash-pay, #credit {
