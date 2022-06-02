@@ -1,14 +1,14 @@
 <template>
-  <ProfessionalData/>
+  <AttendanceAbout/>
 </template>
 
 <script>
-import ProfessionalData from './components/professional-data.vue'
+import AttendanceAbout from './components/attendance-about.vue'
 
 export default {
   name: 'App',
   components: {
-    ProfessionalData
+    AttendanceAbout,
 }
 }
 </script>
