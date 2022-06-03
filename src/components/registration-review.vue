@@ -54,9 +54,11 @@
                   <label class="form-label">Cartão de crédito - Parcelamento em 2x sem juros</label>
                 </div>
                 <div class="row mb-3">
-                  <div class="d-grid gap-2 col-12">
-                    <button type="button" class="btn btn-primary" id="register-button">CADASTRAR PROFISSIONAL</button>
-                  </div>                
+                  <router-link to="/finished">
+                    <div class="d-grid gap-2 col-12">
+                      <button type="button" class="btn btn-primary" id="register-button">CADASTRAR PROFISSIONAL</button>                    
+                    </div>  
+                  </router-link>              
                 </div>
                 <div class="row justify-content-center">
                   <div class="offset-7">
