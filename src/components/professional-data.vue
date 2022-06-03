@@ -35,9 +35,9 @@
               <label for="state" class="form-label">Estado*</label>
               <select class="form-select" aria-label="Default select example" id="state">
                 <option selected>Selecione</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option v-for="state in states" :key="state.id" :value="state.nome">
+                  {{state.nome}}
+                </option>
               </select>
             </div>
 
@@ -45,9 +45,9 @@
               <label for="city" class="form-label">Cidade*</label>
               <select class="form-select" aria-label="Default select example" id="city">
                 <option selected>Selecione</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option v-for="city in cities" :key="city.id" :value="city.nome">
+                  {{city.nome}}
+                </option>
               </select>
             </div>
           </div><br>
@@ -87,6 +87,38 @@
     </div>
   </body>
 </template>
+
+<script>
+import api from '@/services/api.js'
+  export default {
+    data() {
+      return {
+        cities: [],
+        states: []
+      }
+    },
+
+    mounted() {
+      this.getCities();
+      this.getStates();
+    },
+
+    methods: {
+      getCities() {
+        api.get('/cidades').then(response => {
+          this.cities = response.data;
+        })
+      },
+
+      getStates() {
+        api.get('/estados').then(response => {
+          this.states = response.data;
+        })
+      }
+    }
+  }
+
+</script>
 
 <style>
 </style>

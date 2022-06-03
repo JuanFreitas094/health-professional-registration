@@ -20,6 +20,9 @@
                   <label for="full-name" class="form-label">Especialidade principal*</label>
                   <select class="form-select" aria-label="Default select example" id="specialty" placeholder="Selecione a especialidade">
                   <option selected>Selecione</option>
+                  <option v-for="specialty in specialties" :key="specialty.id" :value="specialty.nome">
+                    {{specialty.nome}}
+                  </option>
                   </select>
                 </div>
               </div><br>
@@ -146,10 +149,24 @@
 
 
 <script>
+  import api from '@/services/api.js'
   export default {
     data() {
       return {
-        checkBoxChecked: false
+        checkBoxChecked: false,
+        specialties: []
+      }
+    },
+
+    mounted() {
+      this.getSpecialties();
+    },
+
+    methods: {
+      getSpecialties() {
+        api.get('/especialidades').then(response => {
+          this.specialties = response.data;
+        })
       }
     }
   }
